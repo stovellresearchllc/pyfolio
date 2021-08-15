@@ -339,11 +339,11 @@ def create_simple_tear_sheet(returns,
     ax_rolling_returns = plt.subplot(gs[:2, :])
     i = 2
     if benchmark_rets is not None:
-        ax_rolling_beta = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+        ax_rolling_beta = plt.subplot(gs[i, :])
         i += 1
-    ax_rolling_sharpe = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_rolling_sharpe = plt.subplot(gs[i, :])
     i += 1
-    ax_underwater = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_underwater = plt.subplot(gs[i, :])
     i += 1
 
     plotting.plot_rolling_returns(returns,
@@ -364,9 +364,9 @@ def create_simple_tear_sheet(returns,
         # Plot simple positions tear sheet
         ax_exposures = plt.subplot(gs[i, :])
         i += 1
-        ax_top_positions = plt.subplot(gs[i, :], sharex=ax_exposures)
+        ax_top_positions = plt.subplot(gs[i, :])
         i += 1
-        ax_holdings = plt.subplot(gs[i, :], sharex=ax_exposures)
+        ax_holdings = plt.subplot(gs[i, :])
         i += 1
         ax_long_short_holdings = plt.subplot(gs[i, :])
         i += 1
@@ -490,25 +490,22 @@ def create_returns_tear_sheet(returns, positions=None,
     ax_rolling_returns = plt.subplot(gs[:2, :])
 
     i = 2
-    ax_rolling_returns_vol_match = plt.subplot(gs[i, :],
-                                               sharex=ax_rolling_returns)
+    ax_rolling_returns_vol_match = plt.subplot(gs[i, :])
     i += 1
-    ax_rolling_returns_log = plt.subplot(gs[i, :],
-                                         sharex=ax_rolling_returns)
+    ax_rolling_returns_log = plt.subplot(gs[i, :])
     i += 1
-    ax_returns = plt.subplot(gs[i, :],
-                             sharex=ax_rolling_returns)
+    ax_returns = plt.subplot(gs[i, :])
     i += 1
     if benchmark_rets is not None:
-        ax_rolling_beta = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+        ax_rolling_beta = plt.subplot(gs[i, :])
         i += 1
-    ax_rolling_volatility = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_rolling_volatility = plt.subplot(gs[i, :])
     i += 1
-    ax_rolling_sharpe = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_rolling_sharpe = plt.subplot(gs[i, :])
     i += 1
-    ax_drawdown = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_drawdown = plt.subplot(gs[i, :])
     i += 1
-    ax_underwater = plt.subplot(gs[i, :], sharex=ax_rolling_returns)
+    ax_underwater = plt.subplot(gs[i, :])
     i += 1
     ax_monthly_heatmap = plt.subplot(gs[i, 0])
     ax_annual_returns = plt.subplot(gs[i, 1])
@@ -645,11 +642,11 @@ def create_position_tear_sheet(returns, positions,
     fig = plt.figure(figsize=(14, vertical_sections * 6))
     gs = gridspec.GridSpec(vertical_sections, 3, wspace=0.5, hspace=0.5)
     ax_exposures = plt.subplot(gs[0, :])
-    ax_top_positions = plt.subplot(gs[1, :], sharex=ax_exposures)
-    ax_max_median_pos = plt.subplot(gs[2, :], sharex=ax_exposures)
-    ax_holdings = plt.subplot(gs[3, :], sharex=ax_exposures)
+    ax_top_positions = plt.subplot(gs[1, :])
+    ax_max_median_pos = plt.subplot(gs[2, :])
+    ax_holdings = plt.subplot(gs[3, :])
     ax_long_short_holdings = plt.subplot(gs[4, :])
-    ax_gross_leverage = plt.subplot(gs[5, :], sharex=ax_exposures)
+    ax_gross_leverage = plt.subplot(gs[5, :])
 
     positions_alloc = pos.get_percent_alloc(positions)
 
@@ -679,7 +676,7 @@ def create_position_tear_sheet(returns, positions,
         if len(sector_exposures.columns) > 1:
             sector_alloc = pos.get_percent_alloc(sector_exposures)
             sector_alloc = sector_alloc.drop('cash', axis='columns')
-            ax_sector_alloc = plt.subplot(gs[6, :], sharex=ax_exposures)
+            ax_sector_alloc = plt.subplot(gs[6, :])
             plotting.plot_sector_allocations(returns, sector_alloc,
                                              ax=ax_sector_alloc)
 
@@ -733,7 +730,7 @@ def create_txn_tear_sheet(returns, positions, transactions,
     fig = plt.figure(figsize=(14, vertical_sections * 6))
     gs = gridspec.GridSpec(vertical_sections, 3, wspace=0.5, hspace=0.5)
     ax_turnover = plt.subplot(gs[0, :])
-    ax_daily_volume = plt.subplot(gs[1, :], sharex=ax_turnover)
+    ax_daily_volume = plt.subplot(gs[1, :])
     ax_turnover_hist = plt.subplot(gs[2, :])
     ax_txn_timings = plt.subplot(gs[3, :])
 
