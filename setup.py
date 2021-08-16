@@ -53,7 +53,7 @@ install_reqs = [
     'empyrical>=0.5.0',
 ]
 
-test_reqs = ['nose>=1.3.7', 'nose-parameterized>=0.5.0', 'runipy>=0.1.3']
+test_reqs = ['pytest', 'nbformat', 'nbconvert', 'parameterized']
 
 extras_reqs = {
     'test': test_reqs,
@@ -77,5 +77,5 @@ if __name__ == "__main__":
         install_requires=install_reqs,
         extras_require=extras_reqs,
         tests_require=test_reqs,
-        test_suite='nose.collector',
+        # test_suite='nose.collector',
     )
