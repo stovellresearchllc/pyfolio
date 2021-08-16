@@ -36,7 +36,7 @@ before_install:
   - cp pyfolio/tests/matplotlibrc .
 
 install:
-  - conda create -q -n testenv --yes python=$TRAVIS_PYTHON_VERSION ipython numpy scipy nose matplotlib pandas=$PANDAS_VERSION flake8 seaborn scikit-learn runipy pandas-datareader
+  - conda create -q -n testenv --yes python=$TRAVIS_PYTHON_VERSION ipython numpy scipy pytest matplotlib pandas=$PANDAS_VERSION flake8 seaborn scikit-learn nbformat nbconvert pandas-datareader
   - source activate testenv
   - pip install -e .[all]
 
@@ -44,7 +44,7 @@ before_script:
   - "flake8 pyfolio"
 
 script:
-  - nosetests $TESTCMD
+  - pytest $TESTCMD
 
 notifications:
   email: false
