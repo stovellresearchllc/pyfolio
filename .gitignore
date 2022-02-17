@@ -61,3 +61,6 @@ target/
 
 # IPython notebook checkpoints
 .ipynb_checkpoints/
+
+# MyPy artifacts
+.mypy_cache/
